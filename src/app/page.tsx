@@ -53,12 +53,14 @@ export default function Home() {
               <i className="fas fa-quote-left absolute -top-4 -left-2 text-3xl text-develi-khaki opacity-30"></i>
 
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light">
-                1957 yılında{' '}
-                <span className="text-develi-gold font-serif font-semibold">Mehmet Şahaner</span>{' '}
-                tarafından kurulan Develi Pide, lezzetli ve keyifli bir yemek deneyimi sunma
-                konusunda İvedik OSB'de{' '}
-                <span className="text-develi-gold font-serif font-semibold">Hüseyin Şahaner</span>
-                'le birlikte 'Develi Lezzeti'nin tek adresi olmaya devam ediyor.
+                1957 yılında bir simit fırını olarak başlayan yolculuğumuz,{' '}
+                <span className="text-develi-gold font-serif font-semibold">Mehmet Şahaner</span>'in
+                lezzet tutkusu ve ustalığı ile Develi Pide adını alarak büyüdü. İvedik OSB'de açılan
+                restoranımız, geleneksel Develi lezzetlerini Ankara'nın kalbine taşıdı.
+                Bugün{' '}
+                <span className="text-develi-gold font-serif font-semibold">Hüseyin Şahaner</span>{' '}
+                ile 2. kuşak olarak devam eden ailemiz, taş fırınımızda pişen pideleri ve mangalda
+                hazırlanan kebaplarımızla Develi Lezzeti'nin İvedik OSB'deki tek adresi olmaya devam ediyor.
               </p>
 
               <i className="fas fa-quote-right absolute -bottom-4 -right-2 text-3xl text-develi-khaki opacity-30"></i>
@@ -103,12 +105,6 @@ export default function Home() {
                   alt="Develi Cıvıklısı"
                   className="relative z-10 w-full h-[500px] object-cover transition-all duration-700 shadow-2xl"
                 />
-                <div className="absolute bottom-10 -right-10 bg-develi-khaki p-6 hidden md:block z-20 shadow-xl">
-                  <span className="block text-4xl font-serif font-bold text-white">500</span>
-                  <span className="block text-sm uppercase tracking-wider text-white/80">
-                    Yıllık Tarih
-                  </span>
-                </div>
               </div>
             </ScrollReveal>
 
@@ -207,12 +203,6 @@ export default function Home() {
                   alt="Ankara Döneri"
                   className="relative z-10 w-full h-[500px] object-cover transition-all duration-700 shadow-2xl"
                 />
-                <div className="absolute bottom-10 -left-10 bg-develi-khaki p-6 hidden md:block z-20 shadow-xl">
-                  <span className="block text-4xl font-serif font-bold text-white">★★★</span>
-                  <span className="block text-sm uppercase tracking-wider text-white/80">
-                    Başkent Lezzeti
-                  </span>
-                </div>
               </div>
             </ScrollReveal>
           </div>
@@ -228,11 +218,6 @@ export default function Home() {
                   alt="Kebap Çeşitleri"
                   className="relative z-10 w-full h-[500px] object-cover transition-all duration-700 shadow-2xl"
                 />
-                <div className="absolute bottom-10 -right-10 bg-develi-khaki p-6 hidden md:block z-20 shadow-xl">
-                  <span className="block text-sm uppercase tracking-wider text-white text-center">
-                    Mangal Ustalığı
-                  </span>
-                </div>
               </div>
             </ScrollReveal>
 
