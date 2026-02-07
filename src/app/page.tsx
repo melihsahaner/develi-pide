@@ -383,7 +383,7 @@ export default function Home() {
               <h4 className="text-3xl font-newsreader font-bold text-white mb-2">DEVELİ</h4>
               <span className="text-develi-khaki tracking-widest text-sm">PİDE & KEBAP</span>
               <p className="text-gray-500 mt-4 text-sm">
-                Geleneksel lezzetlerin modern sunumu.
+                Ankara İvedik OSB'de sanayi lezzeti sunan Develi Pide Kebap, geleneksel taş fırın pideleri ve kebaplarıyla hizmet vermektedir.
               </p>
             </div>
 
