@@ -134,13 +134,6 @@ export default function Home() {
                   <li className="flex items-start">
                     <i className="fas fa-check text-develi-khaki mt-1 mr-3"></i>
                     <span>
-                      <strong className="text-white">Sebze Dengesi:</strong> Geleneksel tarifinde
-                      soğan bulunmaz, eti yumuşatmak için domates ve biber ustalıkla harmanlanır.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <i className="fas fa-check text-develi-khaki mt-1 mr-3"></i>
-                    <span>
                       <strong className="text-white">Taş Fırın:</strong> Meşe odunu ateşinde, çıtır
                       hamur ve sulu iç harcın mükemmel uyumu.
                     </span>
