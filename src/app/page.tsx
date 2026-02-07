@@ -22,8 +22,8 @@ export default function Home() {
             className="cursor-pointer hover:opacity-90 transition-opacity"
           >
             <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
-              Ateşin ve Ustalığın <br />{' '}
-              <span className="italic text-develi-gold">Buluştuğu Yer</span>
+              Develi Lezzetinin <br />{' '}
+              <span className="italic text-develi-gold">Ankara'daki Adresi</span>
             </h1>
           </a>
           <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-lg font-light shadow-black drop-shadow-md">
