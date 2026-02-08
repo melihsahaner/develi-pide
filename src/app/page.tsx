@@ -363,6 +363,16 @@ export default function Home() {
               <p className="text-gray-500 mt-4 text-sm">
                 Ankara İvedik OSB'de sanayi lezzeti sunan Develi Pide Kebap, geleneksel taş fırın pideleri ve kebaplarıyla hizmet vermektedir.
               </p>
+              {/* Blog Link */}
+              <div className="mt-6">
+                <a
+                  href="/blog"
+                  className="inline-flex items-center gap-2 text-develi-gold hover:text-develi-khaki transition-colors text-sm font-medium"
+                >
+                  <i className="fas fa-newspaper"></i>
+                  Blog Yazılarımız
+                </a>
+              </div>
             </div>
 
             {/* Info */}

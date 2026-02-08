@@ -23,7 +23,7 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-24">
                     <div className="flex-shrink-0">
-                        <a href="#" className="text-2xl font-serif font-bold tracking-wider text-white">
+                        <a href="/" className="text-2xl font-serif font-bold tracking-wider text-white">
                             DEVELİ PİDE KEBAP
                         </a>
                     </div>
