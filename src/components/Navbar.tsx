@@ -48,7 +48,9 @@ export default function Navbar() {
                                 Özel Lezzetlerimiz
                             </a>
                             <a
-                                href="#menu"
+                                href="/menu.html"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="hover:text-develi-gold transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium"
                             >
                                 Menü
@@ -100,7 +102,9 @@ export default function Navbar() {
                         Özel Lezzetlerimiz
                     </a>
                     <a
-                        href="#menu"
+                        href="/menu.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="block px-3 py-2 text-base font-medium text-white hover:text-develi-gold"
                         onClick={() => setMobileMenuOpen(false)}
                     >

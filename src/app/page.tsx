@@ -31,7 +31,9 @@ export default function Home() {
             hayat buluyor.
           </p>
           <a
-            href="#menu"
+            href="/menu.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block border border-develi-khaki bg-black/30 backdrop-blur-sm text-develi-khaki hover:bg-develi-khaki hover:text-white transition-all duration-300 py-3 px-10 tracking-widest text-sm uppercase"
           >
             Menüyü İncele
@@ -262,95 +264,7 @@ export default function Home() {
       </section>
 
 
-      {/* Menu Section */}
-      <section id="menu" className="py-24 parallax bg-menu relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <ScrollReveal>
-              <span className="text-develi-khaki text-sm tracking-widest uppercase font-bold">
-                Lezzet Şöleni
-              </span>
-              <h2 className="text-4xl md:text-5xl font-newsreader text-white mt-2">Menümüz</h2>
-              <div className="w-24 h-0.5 bg-develi-gold mx-auto mt-6"></div>
-            </ScrollReveal>
-          </div>
 
-          {/* Pide Çeşitleri */}
-          <div className="mb-16">
-            <ScrollReveal>
-              <h3 className="text-2xl font-newsreader text-develi-khaki mb-8 text-center border-b border-gray-800 pb-4">
-                Pide Çeşitleri
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-                <MenuItem name="Kıymalı" price="240₺" />
-                <MenuItem name="Kaşarlı" price="240₺" />
-                <MenuItem name="Kuşbaşı + Kaşar" price="280₺" />
-                <MenuItem name="Sucuklu Pide" price="270₺" />
-                <MenuItem name="Kapalı Döner" price="280₺" />
-                <MenuItem name="Kuşbaşılı" price="270₺" />
-                <MenuItem name="Karışık" price="270₺" />
-                <MenuItem name="Kıymalı + Kaşar" price="250₺" />
-                <MenuItem name="Tavuklu Pide" price="240₺" />
-                <MenuItem name="Lahmacun" price="125₺" />
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Kebap Çeşitleri */}
-          <div className="mb-16">
-            <ScrollReveal>
-              <h3 className="text-2xl font-newsreader text-develi-khaki mb-8 text-center border-b border-gray-800 pb-4">
-                Kebap Çeşitleri
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-                <MenuItem name="Döner" price="280₺" />
-                <MenuItem name="Pilav Üstü Döner" price="300₺" />
-                <MenuItem name="Adana" price="270₺" />
-                <MenuItem name="Kanat Şiş" price="260₺" />
-                <MenuItem name="İskender" price="300₺" />
-                <MenuItem name="Beyti" price="320₺" />
-                <MenuItem name="Yoğurtlu Adana" price="300₺" />
-                <MenuItem name="Tavuk Şiş" price="260₺" />
-              </div>
-            </ScrollReveal>
-          </div>
-
-          {/* Kiremitte & Tatlılar */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Kiremitte */}
-            <ScrollReveal>
-              <div>
-                <h3 className="text-2xl font-newsreader text-develi-khaki mb-8 text-center border-b border-gray-800 pb-4">
-                  Kiremitte Lezzetler
-                </h3>
-                <div className="space-y-6">
-                  <MenuItem name="Kiremitte Kuşbaşı" price="300₺" />
-                  <MenuItem name="Kiremitte Köfte" price="300₺" />
-                  <MenuItem name="Kiremitte Kıyma" price="300₺" />
-                  <MenuItem name="Kiremitte Tavuk" price="300₺" />
-                </div>
-              </div>
-            </ScrollReveal>
-
-            {/* Tatlı & İçecek */}
-            <ScrollReveal>
-              <div>
-                <h3 className="text-2xl font-newsreader text-develi-khaki mb-8 text-center border-b border-gray-800 pb-4">
-                  Tatlı & İçecekler
-                </h3>
-                <div className="space-y-6">
-                  <MenuItem name="Şekerpare" price="40₺" />
-                  <div className="pt-4 border-t border-gray-800"></div>
-                  <MenuItem name="Ayran" price="30₺" />
-                  <MenuItem name="Şalgam" price="50₺" />
-                  <MenuItem name="Cola / Fanta" price="50₺" />
-                  <MenuItem name="Litrelik Cola" price="80-100₺" />
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
 
       {/* Footer / Contact */}
       <footer id="contact" className="bg-black text-white py-16 border-t border-develi-khaki/30">
@@ -421,13 +335,3 @@ export default function Home() {
   );
 }
 
-// Menu Item Component
-function MenuItem({ name, price }: { name: string; price: string }) {
-  return (
-    <div className="flex items-end justify-between">
-      <span className="text-lg text-gray-200">{name}</span>
-      <span className="menu-item-dot"></span>
-      <span className="text-xl font-newsreader text-develi-gold">{price}</span>
-    </div>
-  );
-}

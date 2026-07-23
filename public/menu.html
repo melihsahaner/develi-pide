@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menü | Develi Pide Kebap</title>
+    <meta name="description" content="Develi Pide Kebap menüsü - Pide, kebap, döner ve içecek fiyatları. Ankara İvedik OSB.">
+    <link rel="icon" href="/mehmetsahaner_favicon.PNG">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --dark: #0a0a0a;
+            --dark-card: #111111;
+            --khaki: #d4af37;
+            --gold: #d4af37;
+            --gold-dim: rgba(212, 175, 55, 0.15);
+            --text: #e5e5e5;
+            --text-muted: #9ca3af;
+            --border: rgba(212, 175, 55, 0.15);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 50% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        .menu-header {
+            text-align: center;
+            padding: 2.5rem 1rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .menu-header .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.25rem;
+        }
+
+        .menu-header .brand-sub {
+            font-size: 0.7rem;
+            color: var(--khaki);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .menu-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: white;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-header .divider {
+            width: 80px;
+            height: 2px;
+            background: var(--khaki);
+            margin: 1rem auto 0.75rem;
+        }
+
+        .menu-header .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Column headers */
+        .portion-header {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1.5rem;
+            padding: 0 0.5rem 0.75rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .portion-header span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--khaki);
+            font-weight: 600;
+            width: 60px;
+            text-align: right;
+        }
+
+        /* Category */
+        .category {
+            margin-bottom: 2.5rem;
+            animation: fadeUp 0.6s ease-out both;
+        }
+
+        .category:nth-child(2) { animation-delay: 0.1s; }
+        .category:nth-child(3) { animation-delay: 0.2s; }
+        .category:nth-child(4) { animation-delay: 0.3s; }
+        .category:nth-child(5) { animation-delay: 0.4s; }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--khaki);
+            text-align: center;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--khaki);
+        }
+
+        /* Menu item */
+        .menu-item {
+            display: flex;
+            align-items: baseline;
+            padding: 0.6rem 0.5rem;
+            transition: background 0.2s ease;
+            border-radius: 4px;
+        }
+
+        .menu-item:hover {
+            background: var(--gold-dim);
+        }
+
+        .item-name {
+            font-size: 1rem;
+            color: var(--text);
+            white-space: nowrap;
+        }
+
+        .item-dots {
+            flex-grow: 1;
+            border-bottom: 1px dotted rgba(212, 175, 55, 0.3);
+            margin: 0 12px;
+            position: relative;
+            top: -4px;
+        }
+
+        .item-prices {
+            display: flex;
+            gap: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .item-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            color: var(--gold);
+            font-weight: 600;
+            width: 60px;
+            text-align: right;
+        }
+
+        .item-price.single {
+            width: auto;
+        }
+
+        /* Footer */
+        .menu-footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .menu-footer .phone {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            transition: opacity 0.2s;
+        }
+
+        .menu-footer .phone:hover { opacity: 0.8; }
+
+        .menu-footer .address {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .menu-footer .copyright {
+            font-size: 0.7rem;
+            color: #444;
+            margin-top: 1.5rem;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .menu-header h1 { font-size: 2.2rem; }
+            .category-title { font-size: 1.25rem; }
+            .item-name { font-size: 0.9rem; }
+            .item-price { font-size: 1rem; width: 50px; }
+            .item-prices { gap: 1rem; }
+            .portion-header { gap: 1rem; }
+            .portion-header span { width: 50px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header class="menu-header">
+        <div class="brand">DEVELİ</div>
+        <div class="brand-sub">Pide & Kebap</div>
+        <h1>Menümüz</h1>
+        <div class="divider"></div>
+        <p class="subtitle">Taş fırından gelen efsane lezzet</p>
+    </header>
+
+    <!-- Pideler -->
+    <div class="category">
+        <h2 class="category-title">Pideler</h2>
+        <div class="portion-header">
+            <span>1</span>
+            <span>1.5</span>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Kıymalı</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">280₺</span>
+                <span class="item-price">420₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Kaşarlı</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">280₺</span>
+                <span class="item-price">420₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Kuşbaşılı</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">320₺</span>
+                <span class="item-price">480₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Karışık</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">320₺</span>
+                <span class="item-price">480₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Kuşbaşı + Kaşar</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">340₺</span>
+                <span class="item-price">520₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Kıyma + Kaşar</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">300₺</span>
+                <span class="item-price">460₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Tavuklu</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">300₺</span>
+                <span class="item-price">450₺</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kebap & Et Çeşitleri -->
+    <div class="category">
+        <h2 class="category-title">Kebap & Et Çeşitleri</h2>
+        <div class="portion-header">
+            <span>1</span>
+            <span>1.5</span>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Döner</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">320₺</span>
+                <span class="item-price">480₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Pilav Üstü</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">350₺</span>
+                <span class="item-price">525₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">İskender</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">350₺</span>
+                <span class="item-price">525₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Beyti</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">370₺</span>
+                <span class="item-price">550₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Tavuk Şiş – Kanat</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">300₺</span>
+                <span class="item-price">450₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Adana</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price">320₺</span>
+                <span class="item-price">480₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Kiremit</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">350₺</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- İçecekler -->
+    <div class="category">
+        <h2 class="category-title">İçecekler</h2>
+        <div class="menu-item">
+            <span class="item-name">Ayran</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">40₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Kola – Fanta – Gazoz</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">60₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Soda</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">20₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Su</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">20₺</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Büyük İçecekler -->
+    <div class="category">
+        <h2 class="category-title">Büyük İçecekler</h2>
+        <div class="menu-item">
+            <span class="item-name">Litre Kola</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">80₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">1.5 Litre Kola</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">90₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">2.5 Litre Kola</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">100₺</span>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="item-name">Litre Ayran</span>
+            <span class="item-dots"></span>
+            <div class="item-prices">
+                <span class="item-price single">100₺</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="menu-footer">
+        <a href="tel:03953951849" class="phone">☎ 395 18 49 – 50</a>
+        <p class="address">Develi Pide Kebap, Ostim Mh, 1344. Sk. No:21, 06374 Yenimahalle/Ankara</p>
+        <p class="copyright">&copy; 2026 Develi Pide Kebap. Tüm hakları saklıdır.</p>
+    </footer>
+</div>
+
+</body>
+</html>
