@@ -30,14 +30,7 @@ export default function Home() {
             Yüzyıllık Develi geleneği, özel taş fırınımızda, en kaliteli malzemelerle yeniden
             hayat buluyor.
           </p>
-          <a
-            href="/menu.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block border border-develi-khaki bg-black/30 backdrop-blur-sm text-develi-khaki hover:bg-develi-khaki hover:text-white transition-all duration-300 py-3 px-10 tracking-widest text-sm uppercase"
-          >
-            Menüyü İncele
-          </a>
+
         </div>
       </section>
 

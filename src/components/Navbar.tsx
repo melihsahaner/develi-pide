@@ -47,14 +47,7 @@ export default function Navbar() {
                             >
                                 Özel Lezzetlerimiz
                             </a>
-                            <a
-                                href="/menu.html"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-develi-gold transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium"
-                            >
-                                Menü
-                            </a>
+
                             <a
                                 href="#contact"
                                 className="bg-develi-khaki text-white hover:bg-opacity-80 transition-all px-4 py-2 rounded-none text-sm font-medium tracking-wide"
@@ -101,15 +94,7 @@ export default function Navbar() {
                     >
                         Özel Lezzetlerimiz
                     </a>
-                    <a
-                        href="/menu.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block px-3 py-2 text-base font-medium text-white hover:text-develi-gold"
-                        onClick={() => setMobileMenuOpen(false)}
-                    >
-                        Menü
-                    </a>
+
                     <a
                         href="#contact"
                         className="block px-3 py-2 text-base font-medium text-develi-gold"
