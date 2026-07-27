@@ -368,6 +368,18 @@ export default function MenuPage() {
             </div>
           </div>
 
+          {/* Çorbalar */}
+          <div className="category">
+            <h2 className="category-title">Çorbalar</h2>
+            <div className="menu-item">
+              <span className="item-name">Mercimek Çorbası</span>
+              <span className="item-dots"></span>
+              <div className="item-prices">
+                <span className="item-price single">100₺</span>
+              </div>
+            </div>
+          </div>
+
           {/* İçecekler */}
           <div className="category">
             <h2 className="category-title">İçecekler</h2>
